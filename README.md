@@ -1,4 +1,5 @@
-AI-Powered Resume Ranking Platform
+AI-POWERED RESUME RANKING PLATFORM
+
 A cloud-native, AI-powered platform designed to automate the initial screening of resumes. This project uses a decoupled, event-driven architecture on AWS, with all infrastructure managed by Terraform. A Python backend uses an NLP model to semantically compare each uploaded resume against the job description, providing a ranked list of the most qualified applicants.
 
 Live Demo
