@@ -4,7 +4,7 @@ A cloud-native, AI-powered platform designed to automate the initial screening o
 Live Demo
 Here is a short video demonstrating the full, end-to-end workflow of the application, from uploading a resume to seeing the final ranked result on the dashboard.
 
-[![Watch the Project Demo](./Assets/demo.png)](./Assets/tanu.mp4)
+[![Watch the Project Demo](./Assets/demo.png)](./Assets/Video.mp4)
 
 Key Features
 Automated Resume Scoring: Uses a Sentence-Transformer model for semantic analysis, going beyond simple keyword matching.
