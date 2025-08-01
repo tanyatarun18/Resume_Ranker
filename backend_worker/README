@@ -1,0 +1,22 @@
+BACKEND WORKER (AI Processor)
+This directory contains the Python application for the backend processing engine. This service runs as a headless, containerized application whose sole responsibility is to perform the AI-powered analysis of resumes.
+
+Core Logic (main.py):
+Listens to SQS: Continuously polls the AWS SQS queue for new messages.
+
+Downloads from S3: Upon receiving a message, it downloads the corresponding resume file from the AWS S3 bucket.
+
+Parses Text: Extracts raw text from .pdf or .docx files.
+
+Semantic Scoring:
+
+Loads a pre-trained NLP model from the sentence-transformers library.
+
+Converts the resume text and the job description into numerical vector embeddings.
+
+Calculates the cosine similarity between the vectors to generate a match score.
+
+Updates Database: Connects to the AWS RDS (PostgreSQL) database and updates the resume record with the calculated score.
+
+Containerization:
+The Dockerfile in this directory packages the application and its dependencies into a portable Docker container. The download_model.py script is run during the build process to pre-cache the AI model, ensuring fast startup times for the container.
