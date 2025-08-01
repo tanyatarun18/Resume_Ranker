@@ -1,0 +1,23 @@
+TERRAFORM INFRASTRUCTURE
+This directory contains all the Infrastructure as Code (IaC) files for provisioning the projects cloud resources on AWS. Using Terraform ensures that the entire cloud environment is automated, repeatable, and version-controlled.
+
+Core Resources Created:
+Networking (vpc.tf, networking.tf):
+
+A Virtual Private Cloud (VPC) to provide a secure, isolated network.
+
+Two public subnets across different Availability Zones for high availability.
+
+An Internet Gateway and Route Tables to allow public internet access.
+
+A Security Group acting as a stateful firewall for the RDS database, configured to allow traffic only from a specific IP for development.
+
+Database (database.tf):
+
+An AWS RDS instance running a PostgreSQL database to store job postings and candidate scores.
+
+Storage & Messaging (storage.tf):
+
+An AWS S3 bucket to store all uploaded resume files.
+
+An AWS SQS queue to handle messages for asynchronous processing of resumes.
