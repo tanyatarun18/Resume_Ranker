@@ -1,0 +1,18 @@
+WEB APPLICATION (Frontend)
+This directory contains the user-facing web application built with the Flask framework in Python. It provides the dashboard for recruiters to interact with the system.
+
+Core Responsibilities (app.py):
+Render Dashboard: Fetches job and candidate data from the AWS RDS database (via db.py) and displays it on a user-friendly HTML template (templates/dashboard.html).
+
+Handle File Uploads: Provides an endpoint for recruiters to upload resume files.
+
+Trigger Backend Process: After receiving a file, the application performs two key actions:
+
+Uploads the resume file directly to the AWS S3 bucket.
+
+Sends a JSON message to the AWS SQS queue, which triggers the backend worker to begin processing.
+
+This decoupled approach ensures the web application remains fast and responsive, regardless of how many resumes are being processed in the background.
+
+Containerization:
+The Dockerfile in this directory packages the Flask application to run with a production-ready gunicorn web server inside a Docker container.
