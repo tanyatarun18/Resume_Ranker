@@ -1,0 +1,6 @@
+boto3
+PyMuPDF
+python-docx
+sentence-transformers
+scikit-learn
+psycopg2-binary
